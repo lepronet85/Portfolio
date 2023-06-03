@@ -1,0 +1,70 @@
+:root {
+  --primary: #FF6B00;
+  --secondary: #36B37E;
+  --text: #172B4D;
+  --neutral: #EBF0EE;
+}
+
+#container {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.text {
+  color: var(--text);
+}
+
+.neutral {
+  color: var(--neutral);
+}
+
+.bg-neutral {
+  background-color: var(--neutral);
+}
+
+#download-cv:hover {
+  box-shadow: none;
+}
+
+#download-cv {
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, .5);
+}
+
+.works>div {
+  width: calc(96%/3);
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+}
+
+input:focus, textarea:focus {
+  outline-color: var(--primary);
+}
+
+@media not all and (min-width: 768px) {
+  .works>div {
+    width: calc(70%/1);
+  }
+}
+@media not all and (min-width: 640px) {
+  .works>div {
+    width: calc(90%/1);
+  }
+}
