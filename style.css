@@ -14,6 +14,22 @@
   color: var(--primary);
 }
 
+.btn-eff-primary:hover {
+  background-color: #FE984E;
+}
+
+.btn-eff-primary:focus {
+  background-color: #E35F00;
+}
+
+.btn-eff-secondary:hover {
+  background-color: #C5E9DA;
+}
+
+.btn-eff-secondary:focus {
+  background-color: #28855D;
+}
+
 .secondary {
   color: var(--secondary);
 }
@@ -38,12 +54,9 @@
   background-color: var(--neutral);
 }
 
-#download-cv:hover {
-  box-shadow: none;
-}
-
 #download-cv {
   box-shadow: 5px 5px 8px rgba(0, 0, 0, .5);
+  transition: box-shadow .2s ease-in;
 }
 
 .works>div {
@@ -54,17 +67,77 @@ input[type="submit"] {
   background-color: var(--primary);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline-color: var(--primary);
 }
 
+
 @media not all and (min-width: 768px) {
   .works>div {
-    width: calc(70%/1);
+    width: calc(96%/1);
   }
-}
-@media not all and (min-width: 640px) {
-  .works>div {
-    width: calc(90%/1);
+
+  .menu {
+    overflow: hidden;
+    margin-top: 20px;
+    z-index: 2;
+    width: 100%;
+  }
+
+  #toggler,
+  #toggler2 {
+    z-index: 2;
+    top: 8px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  #menu-icon {
+    right: 1px;
+  }
+
+  #toggler:checked~.menu {
+    display: block;
+    animation: menuAnimation .5s ease-in forwards;
+  }
+
+  #works h1, #about-me h1, #contact h1 {
+    position: relative;
+  }
+
+  #works h1::before, #about-me h1::before, #contact h1::before {
+    content: "";
+    width: 120px;
+    height: 10px;
+    background-color: var(--text);
+    border-radius: 10px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes menuAnimation {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: 150px;
+    }
+  }
+
+  @keyframes menuAnimationReverse {
+    from {
+      height: 150px;
+    }
+
+    to {
+      height: 0;
+    }
   }
 }
